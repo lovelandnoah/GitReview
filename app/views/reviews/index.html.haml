@@ -1,4 +1,27 @@
-%h1 Reviews#index
-%p Find me in app/views/reviews/index.html.haml
-%p 
-	= link_to "Log Out", destroy_user_session_path, method: 'delete'
+= form_tag(reviews_path, :method => "get", id: "search-form") do
+  = text_field_tag :search, params[:search], placeholder: "Search Repositories"
+  = submit_tag "Search"
+
+  %br
+
+
+  - if @github.present?
+    = link_to "Comment on #{@github1}", new_review_path(title: @github1.match(/\A[a-zA-Z0-9]+/).to_s, author: @github1.match(/[a-zA-Z0-9]+\z/).to_s)
+
+    %br
+    %br
+    = link_to "Comment on #{@github2}", new_review_path(title: @github2.match(/\A[a-zA-Z0-9]+/).to_s, author: @github2.match(/[a-zA-Z0-9]+\z/).to_s)
+
+    %br
+    %br
+    = link_to "Comment on #{@github3}", new_review_path(title: @github3.match(/\A[a-zA-Z0-9]+/).to_s, author: @github3.match(/[a-zA-Z0-9]+\z/).to_s)
+    %br
+    %br
+    =# link_to "Comment on #{@github4}", new_review_path(title: @github4.match(/\A[a-zA-Z0-9]+/).to_s, author: @github4.match(/[a-zA-Z0-9]+\z/).to_s)
+    %br
+    %br
+    =# link_to "Comment on #{@github5}", new_review_path(title: @github5.match(/\A[a-zA-Z0-9]+/).to_s, author: @github5.match(/[a-zA-Z0-9]+\z/).to_s)
+
+  = link_to "Log Out", destroy_user_session_path, method: 'delete'
+
+
