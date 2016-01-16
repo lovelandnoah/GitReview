@@ -2,6 +2,9 @@ Rails.application.routes.draw do
   resources :reviews
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   
+
+  get 'reviews/show_for_repo', to: 'reviews#show_for_repo', as: 'repo_show'
+
   # devise_scope :user do
   #   delete 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_user_session
   # end

@@ -1,0 +1,10 @@
+@reviews.each do |f|
+	= link_to f.title, reviews_path(params[:id])
+	= f.user
+	= f.repo
+	%br
+	%br
+	= f.author
+	= f.content
+	= f.star
+	%hr
