@@ -1,2 +1,21 @@
-%h1 Reviews#new
-%p Find me in app/views/reviews/new.html.haml
+%h1 New Review for #{@github.search.repositories(params[:search]).response.body.items[0].full_name}
+%p
+	= form_for(@review) do |f|
+  .field
+    = f.label :title
+    %br/
+    = f.text_field :title, autofocus: true
+  .field
+    = f.label :author
+    %br/
+    = f.text_field :author, autocomplete: "off"
+  .field
+	  = f.label :content
+	  %br/
+	  = f.text_field :content, autocomplete: "off"
+  .field
+	  = f.label :star
+	  %br/
+	  = f.text_field :star, autocomplete: "off"
+  .btn.cyan.black-text
+    = f.submit "Log in" 

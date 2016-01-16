@@ -1,5 +1,6 @@
-<h2>Log in</h2>
-
+<h2 class="center">Welcome to GitReview</h2>
+<h5 class="center">A way to review those Gems you love!</h5>
+<div class="container">
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
     <%= f.label :email %><br />
@@ -18,10 +19,12 @@
     </div>
   <% end -%>
 
-  <div class="actions">
+  <div class="btn cyan black-text">
     <%= f.submit "Log in" %>
-  </div>
+  
 <% end %>
-<h3>To sign in to Github you must be logged out of your Github if you are signed in.</h3>
+</div>
+<h5>To sign in to Github you must be logged out of your Github if you are signed in. Also your email must be public.</h5>
 <%= link_to "Sign in with Github", user_omniauth_authorize_path(:github) %>
 <%= render "devise/shared/links" %>
+</div>
