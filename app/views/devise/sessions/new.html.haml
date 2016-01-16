@@ -1,0 +1,28 @@
+.log
+  .row
+    .col.s12.m6.l6.offset-m3.offset-l3
+      %h2.heading Log in
+      %h5.card.note
+        Please Note:
+        %br/
+        In order to log in with Github on our site, please first log out on
+        %a{:href => "https://www.github.com", :target => "_blank"} Github.com.
+  .row
+    .col.s12.m6.l6.offset-m3.offset-l3
+      = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+        .field.margin
+          = f.label :email
+          %br/
+          = f.email_field :email, autofocus: true
+        .field.margin
+          = f.label :password
+          %br/
+          = f.password_field :password, autocomplete: "off"
+        - if devise_mapping.rememberable?
+          .field.margin
+            = f.check_box :remember_me
+            = f.label :remember_me
+        .actions.margin
+          %button.btn.waves-effect.waves-light{:name => "action", :type => "submit"} Log In
+      %br/
+      = render "devise/shared/links"

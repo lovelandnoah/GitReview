@@ -1,4 +1,15 @@
-%h1 Reviews#index
-%p Find me in app/views/reviews/index.html.haml
-%p 
-	= link_to "Log Out", destroy_user_session_path, method: 'delete'
+%h2.heading Welcome!
+
+%h4.subhead We're so glad you made it.
+
+%div.content
+	%p Git Review gives you more opportunity for growth and allows you to give that same opportunity to others. Please, explore and feel free to rate us!
+	%br
+	%div.row.center
+		%div.col.s12.m4.l4.offset-m3.offset.l4
+			%a.btn{:href => "/reviews/show"} See Reviews
+		%div.col.s12.m4.l4
+			%a.btn{:href => "/reviews/new"} New Review
+		%div.col.s12.m4.l4
+			%a.btn{:href => "https://www.github.com", :target => "_blank"} Visit Github.com
+
