@@ -1,38 +1,42 @@
-%h1 GitReview
-%h5
+<<<<<<< HEAD
+%h2.heading GitReview
+%h4.subhead
 	=  "Welcome #{current_user.email}"
-%p
-%p
-	.float-right.btn= link_to "Log Out", destroy_user_session_path, method: 'delete'
-= form_tag(reviews_path, :method => "get", id: "search-form") do
-	= text_field_tag :search, params[:search], placeholder: "Search Repositories"
-	= submit_tag "Search"
-	%br
-	- if @github.present?
-		=# link_to "Comment on #{@github1}", new_review_path(github_id: @github1_id, user: @github1.match(/\A[a-zA-Z0-9]+/).to_s, repo: @github1.match(/[a-zA-Z0-9]+\z/).to_s)
-
-		=# link_to "Show reviews for #{@github1}", review_path(id: params[:id], github_id: @github1_id)
+%div.bodycon
+	%p
+	%p
+		.float-right.btn= link_to "Log Out", destroy_user_session_path, method: 'delete'
+	= form_tag(reviews_path, :method => "get", id: "search-form") do
+		= text_field_tag :search, params[:search], placeholder: "Search Repositories"
+		= submit_tag "Search"
 		%br
+		- if @github.present?
+			=# link_to "Comment on #{@github1}", new_review_path(github_id: @github1_id, user: @github1.match(/\A[a-zA-Z0-9]+/).to_s, repo: @github1.match(/[a-zA-Z0-9]+\z/).to_s)
+
+			=# link_to "Show reviews for #{@github1}", review_path(id: params[:id], github_id: @github1_id)
+			%br
+			%br
+			= link_to "Comment on #{@github2}", new_review_path(github_id: @github2_id, user: @github2.match(/\A[a-zA-Z0-9]+/).to_s, repo: @github2.match(/[a-zA-Z0-9]+\z/).to_s)
+
+			= link_to "Show reviews for #{@github2}", review_path(id: params[:id], github_id: @github2_id)
+			%br
+			%br
+			=# link_to "Comment on #{@github3}", new_review_path(user: @github3.match(/\A[a-zA-Z0-9]+/).to_s, repo: @github3.match(/[a-zA-Z0-9]+\z/).to_s)
+
+			=# link_to "Show reviews for #{@github3}", review_path(id: params[:id], github_id: @github3_id)
+			%br
+			%br
+			=# link_to "Comment on #{@github4}", new_review_path(title: @github4.match(/\A[a-zA-Z0-9]+/).to_s, author: @github4.match(/[a-zA-Z0-9]+\z/).to_s)
+			%br
+			%br
+			=# link_to "Comment on #{@github5}", new_review_path(title: @github5.match(/\A[a-zA-Z0-9]+/).to_s, author: @github5.match(/[a-zA-Z0-9]+\z/).to_s)
+		= link_to "Log Out", destroy_user_session_path, method: 'delete'
 		%br
-		= link_to "Comment on #{@github2}", new_review_path(github_id: @github2_id, user: @github2.match(/\A[a-zA-Z0-9]+/).to_s, repo: @github2.match(/[a-zA-Z0-9]+\z/).to_s)
-
-		= link_to "Show reviews for #{@github2}", review_path(id: params[:id], github_id: @github2_id)
-		%br
-		%br
-		=# link_to "Comment on #{@github3}", new_review_path(user: @github3.match(/\A[a-zA-Z0-9]+/).to_s, repo: @github3.match(/[a-zA-Z0-9]+\z/).to_s)
-
-		=# link_to "Show reviews for #{@github3}", review_path(id: params[:id], github_id: @github3_id)
-		%br
-		%br
-		=# link_to "Comment on #{@github4}", new_review_path(title: @github4.match(/\A[a-zA-Z0-9]+/).to_s, author: @github4.match(/[a-zA-Z0-9]+\z/).to_s)
-		%br
-		%br
-		=# link_to "Comment on #{@github5}", new_review_path(title: @github5.match(/\A[a-zA-Z0-9]+/).to_s, author: @github5.match(/[a-zA-Z0-9]+\z/).to_s)
-	= link_to "Log Out", destroy_user_session_path, method: 'delete'
-
-
-
-
-
-
+		%div.row.center
+			%div.col.s12.m4.l4.offset-m3.offset.l4
+				%a.btn{:href => "/reviews/show"} See Reviews
+			%div.col.s12.m4.l4
+				%a.btn{:href => "/reviews/new"} New Review
+			%div.col.s12.m4.l4
+				%a.btn{:href => "https://www.github.com", :target => "_blank"} Visit Github.com
 

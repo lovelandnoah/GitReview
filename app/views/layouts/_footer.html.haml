@@ -1,0 +1,23 @@
+%footer.page-footer
+  .container
+    %h3.footalign Rate Github
+    .row
+      .col.l6.s12
+        %h5.white-text
+        %p.grey-text.text-lighten-4 Now you can tell others how well your like their work, and know how well your own work is fairing.
+      .col.l4.offset-l2.s12
+        %ul
+          %li
+            %a.btn{:href => "/"} Home 
+          %br/
+          %li
+            %a.btn{:href => "/reviews/new"} New Review
+          %br/
+          %li
+            %a.btn{:href => "https://www.github.com", :target => "_blank"} Visit Github.com
+    .row
+      .col.l12
+        =link_to 'Log Out', destroy_user_session_path, method: 'delete'
+
+    .footer-copyright
+    .container

@@ -1,16 +1,19 @@
-%h1 Review 
-%p Average Rating: 
-/ for #{@github.search.repositories(params[:search]).response.body.items[0].full_name}
-.btn= link_to "Home", root_path
-.btn.green= link_to "New Review", new_review_path
-%br
-- @reviews.each() do |t|
-		= t.title
-		%br
-		= t.author
-		%br
-		= t.content
-		%br
-		= t.star
+%h2.heading Review 
+%h4.subhead Checkout your reviews!
+%div.bodycon.content
+	%p Average Rating: 
+	/ for #{@github.search.repositories(params[:search]).response.body.items[0].full_name}
+	.btn= link_to "Home", root_path
+	.btn.green= link_to "New Review", new_review_path
 	%br
-	%hr
+	- @reviews.each() do |t|
+			= t.title
+			%br
+			= t.author
+			%br
+			= t.content
+			%br
+			= t.star
+		%br
+		%hr
+		%a.btn{:href => "/reviews/new"} New Review

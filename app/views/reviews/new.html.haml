@@ -1,20 +1,22 @@
-%h1 New Review for #{@user}
-= form_for(@review) do |f|
-	.field
-		= f.label :title
-		%br
-		= f.text_field :title, autofocus: true
-	.field
-		= f.label :author
-		%br
-		= f.text_field :author, autocomplete: "off"
-	.field
-		= f.label :content
-		%br
-		= f.text_field :content, autocomplete: "off"
-	.field
-		= f.label :star
-		%br
-		= f.text_field :star, autocomplete: "off"
-	.btn.cyan.black-text
-		= f.submit "Submit" 
+%h2.heading New Review for #{@user}
+%h4.subhead Search and create a new review.
+%div.bodycon
+	= form_for(@review) do |f|
+		.field
+			= f.label :title
+			%br
+			= f.text_field :title, autofocus: true
+		.field
+			= f.label :author
+			%br
+			= f.text_field :author, autocomplete: "off"
+		.field
+			= f.label :content
+			%br
+			= f.text_field :content, autocomplete: "off"
+		.field
+			= f.label :star
+			%br
+			= f.text_field :star, autocomplete: "off"
+		.btn.cyan.black-text
+			= f.submit "Submit"

@@ -1,0 +1,16 @@
+%nav
+  .nav-wrapper
+    %a.brand-logo.center{:href => "/"} Rate Github
+    %ul#nav-mobile.left.hide-on-med-and-down
+      %li
+        %a{:href => "/"} Home
+      %li
+        %a.dropdown-button{"data-activates" => "dropdown1", :href => "/reviews/show"} Reviews 
+      %li
+        %a{:href => "https://www.github.com", :target => "_blank"} Github.com
+
+%ul#dropdown1.dropdown-content
+  %li
+    %a{:href => "/reviews/show"} See Reviews
+  %li
+    %a{:href => "/reviews/new"} New Review

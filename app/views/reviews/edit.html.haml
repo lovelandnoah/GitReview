@@ -1,24 +1,26 @@
-%h1 Edit Review for #{@github.search.repositories(params[:search]).response.body.items[0].full_name}
-%p
-	= form_for(@review) do |f|
-  .field
-    = f.label :title
-    %br/
-    = f.text_field :title, autofocus: true
-  .field
-    = f.label :author
-    %br/
-    = f.text_field :author, autocomplete: "off"
-  .field
-	  = f.label :content
-	  %br/
-	  = f.text_field :content, autocomplete: "off"
-  .field
-	  = f.label :star
-	  %br/
-	  = f.text_field :star, autocomplete: "off"
-  .btn
-    = f.submit "Log in"
+%h1.heading Edit Review for #{@github.search.repositories(params[:search]).response.body.items[0].full_name}
 
-.btn.red.white-text
-	= link_to "Delete This Review"
+%div.bodycon
+  %p
+  	= form_for(@review) do |f|
+    .field
+      = f.label :title
+      %br/
+      = f.text_field :title, autofocus: true
+    .field
+      = f.label :author
+      %br/
+      = f.text_field :author, autocomplete: "off"
+    .field
+  	  = f.label :content
+  	  %br/
+  	  = f.text_field :content, autocomplete: "off"
+    .field
+  	  = f.label :star
+  	  %br/
+  	  = f.text_field :star, autocomplete: "off"
+    .btn
+      = f.submit "Log in"
+
+  .btn.red.white-text
+  	= link_to "Delete This Review"
